@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>GBA.js</title>
+  <style>
+    body { margin: 0; font-family: arial; background: url(gba.jpg) no-repeat center top }
+    h1 { margin: 5px 0 }
+    #menu { position: absolute; top: 10px; left: 10px }
+    #screen { width: 480px; height: 320px; margin: 130px auto 0; position: relative }
+    canvas { position: absolute; top: 83px; left: 123px; -moz-transform: scale(2); -webkit-transform: scale(2); transform: scale(2) }
+    #canvas0 { background: #000 }
+    #debugger { position: absolute; bottom: 10px; right: 10px }
+  </style>
+</head>
+<body>
+  <div id=menu>
+    <h1>GBA.js</h1>
+    <select id=rom>
+      <option>ROM</option>
+      <option value="roms/Tonc/first.gba">first</option>
+      <option value="roms/Tonc/m3_demo.gba" selected>mode 3</option>
+      <option value="roms/Tonc/pageflip.gba">page flip</option>
+    </select>
+    <button id=play onclick="load($('rom').value, play);">Play</button>
+  </div>
+  <div id=screen>
+    <canvas id=canvas0 width=240 height=160></canvas>
+    <canvas id=canvas1 width=240 height=160></canvas>
+    <canvas id=canvas2 width=240 height=160></canvas>
+    <canvas id=canvas3 width=240 height=160></canvas>
+  </div>
+  <br>
+  <a id=debugger href=debug.html>Debugger</a>
+  <script src="build/gba.min.js"></script>
+</body>
+</html>
